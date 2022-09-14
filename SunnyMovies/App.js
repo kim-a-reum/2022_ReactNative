@@ -32,7 +32,7 @@ export default function App() {
         style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
         onLayout={onLayoutRootView}
       >
-        <Text>slrk==👋</Text>
+        {/* <Text>slrk==👋</Text> */}
         <Entypo name="rocket" size={30} />
       </View>
     );
