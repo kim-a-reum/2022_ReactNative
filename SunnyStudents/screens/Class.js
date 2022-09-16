@@ -10,7 +10,7 @@ const Class = () => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", alignItems: "centerß" },
+  container: { flex: 1, justifyContent: "center", alignItems: "center" },
 });
 
 export default Class;

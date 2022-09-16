@@ -5,6 +5,8 @@ import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 import { Asset } from "expo-asset";
+import { NavigationContainer } from "@react-navigation/native";
+import Tabs from "./TabNavigation/Tabs";
 
 // useAssets 와 useFonts를 사용하지 않은 방식 적용해보기
 // Assets말고 다른 로직이 로딩중에 필요할때는 이렇게 적용해야한다 !
@@ -60,10 +62,9 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
-      <Text> 앱에 오신걸 환영해요 ! 👋</Text>
-      <Entypo name="rocket" size={30} />
-    </View>
+    <NavigationContainer>
+      <Tabs />
+    </NavigationContainer>
   );
 }
 
