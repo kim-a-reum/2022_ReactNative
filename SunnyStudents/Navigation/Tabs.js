@@ -5,31 +5,43 @@ import Student from "../screens/Student";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { useColorScheme } from "react-native";
+import { GRAY, YELLOW } from "../color";
 
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
-  const colorScheme = useColorScheme();
-  console.log(colorScheme);
-
+  // 유저가 다크모드인지 확인하자
+  const isdarkmode = useColorScheme() === "dark";
   return (
     <Tab.Navigator
       initialRouteName="Search"
       screenOptions={{
         tabBarLabelStyle: {
-          color: "#696969",
           fontSize: 12.5,
+          fontWeight: "600",
+          marginTop: -5,
         },
-        tabBarStyle: { height: 85 },
-        headerShown: false,
+        tabBarStyle: {
+          height: 85,
+          backgroundColor: isdarkmode ? GRAY : "white",
+        },
+        tabBarActiveTintColor: isdarkmode ? YELLOW : "black",
+        tabBarInactiveTintColor: isdarkmode ? "white" : GRAY,
+        headerStyle: {
+          backgroundColor: isdarkmode ? YELLOW : "white",
+        },
       }}
     >
       <Tab.Screen
         name="강의 목록"
         component={Class}
         options={{
-          tabBarIcon: () => (
-            <FontAwesome5 name="chalkboard-teacher" size={28} color="#FFE100" />
+          tabBarIcon: ({ focused, color, size }) => (
+            <FontAwesome5
+              name="chalkboard-teacher"
+              size={size}
+              color={focused ? YELLOW : color}
+            />
           ),
         }}
       />
@@ -37,8 +49,12 @@ const Tabs = () => {
         name="학생 목록"
         component={Student}
         options={{
-          tabBarIcon: () => (
-            <Ionicons name="people" size={33} color="#FFE100" />
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons
+              name="people"
+              size={33}
+              color={focused ? YELLOW : color}
+            />
           ),
 
           tabBarBadge: "5",
@@ -54,7 +70,13 @@ const Tabs = () => {
         name="통합 검색"
         component={Search}
         options={{
-          tabBarIcon: () => <Ionicons name="search" size={24} color="black" />,
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons
+              name="search"
+              size={24}
+              color={focused ? YELLOW : color}
+            />
+          ),
         }}
       />
     </Tab.Navigator>

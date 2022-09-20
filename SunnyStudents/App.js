@@ -1,12 +1,17 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Text, View, Image, StyleSheet } from "react-native";
+import { Text, View, Image, StyleSheet, useColorScheme } from "react-native";
 import Entypo from "@expo/vector-icons/Entypo";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 import { Asset } from "expo-asset";
-import { NavigationContainer } from "@react-navigation/native";
-import Tabs from "./TabNavigation/Tabs";
+import {
+  DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
+} from "@react-navigation/native";
+import Tabs from "./Navigation/Tabs";
+import Stack from "./Navigation/Stacks";
 
 // useAssets 와 useFonts를 사용하지 않은 방식 적용해보기
 // Assets말고 다른 로직이 로딩중에 필요할때는 이렇게 적용해야한다 !
@@ -35,7 +40,7 @@ export default function App() {
           "https://images.velog.io/images/yeopto/post/77770604-da6a-4e32-a178-afe19b58ff51/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3.png",
         ]);
         await Promise.all([...fonts, ...images]);
-        await new Promise((resolve) => setTimeout(resolve, 3000));
+        await new Promise((resolve) => setTimeout(resolve, 1500));
       } catch (e) {
         console.warn(e);
       } finally {
@@ -61,9 +66,12 @@ export default function App() {
     );
   }
 
+  // 유저가 다크모드인지 확인하자
+
   return (
     <NavigationContainer>
-      <Tabs />
+      {/* <Tabs /> */}
+      <Stack />
     </NavigationContainer>
   );
 }
