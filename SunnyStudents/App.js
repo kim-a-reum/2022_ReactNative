@@ -12,6 +12,7 @@ import {
 } from "@react-navigation/native";
 import Tabs from "./Navigation/Tabs";
 import Stack from "./Navigation/Stacks";
+import Root from "./Navigation/Root";
 
 // useAssets 와 useFonts를 사용하지 않은 방식 적용해보기
 // Assets말고 다른 로직이 로딩중에 필요할때는 이렇게 적용해야한다 !
@@ -70,8 +71,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      {/* <Tabs /> */}
-      <Stack />
+      <Root />
     </NavigationContainer>
   );
 }

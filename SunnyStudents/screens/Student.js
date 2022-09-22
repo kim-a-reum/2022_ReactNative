@@ -1,11 +1,14 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-const Student = () => {
+const Student = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("Stack", { screen: "Three" })}
+      style={styles.container}
+    >
       <Text>Student</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 

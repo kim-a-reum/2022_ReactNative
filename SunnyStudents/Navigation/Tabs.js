@@ -6,6 +6,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { useColorScheme } from "react-native";
 import { GRAY, YELLOW } from "../color";
+import Stack from "./Stacks";
 
 const Tab = createBottomTabNavigator();
 
@@ -34,7 +35,7 @@ const Tabs = () => {
     >
       <Tab.Screen
         name="강의 목록"
-        component={Class}
+        component={Stack}
         options={{
           tabBarIcon: ({ focused, color, size }) => (
             <FontAwesome5
