@@ -19,7 +19,7 @@ const ScreenTwo = ({ navigation }) => (
 );
 const ScreenThree = ({ navigation }) => (
   <TouchableOpacity
-    onPress={() => navigation.navigate("Tabs", { screen: "Search" })}
+    onPress={() => navigation.navigate("Tabs", { screen: "Class" })}
   >
     <Text>Screen3</Text>
   </TouchableOpacity>

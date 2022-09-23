@@ -1,16 +1,19 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { Text } from "react-native";
+import styled from "styled-components/native";
 
+const Wrapper = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+`;
 const Class = () => {
   return (
-    <TouchableOpacity style={styles.container}>
-      <Text>Class</Text>
-    </TouchableOpacity>
+    <Wrapper>
+      <Text>여기야! class </Text>
+    </Wrapper>
   );
 };
-
-const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", alignItems: "center" },
-});
 
 export default Class;

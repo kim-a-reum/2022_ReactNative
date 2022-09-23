@@ -15,7 +15,6 @@ const Tabs = () => {
   const isdarkmode = useColorScheme() === "dark";
   return (
     <Tab.Navigator
-      initialRouteName="Search"
       screenOptions={{
         tabBarLabelStyle: {
           fontSize: 12.5,
