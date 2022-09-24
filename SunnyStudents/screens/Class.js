@@ -9,11 +9,7 @@ const Wrapper = styled.View`
   background-color: pink;
 `;
 const Class = () => {
-  return (
-    <Wrapper>
-      <Text>여기야! class </Text>
-    </Wrapper>
-  );
+  return <Wrapper>{/* <Text>여기야! class </Text> */}</Wrapper>;
 };
 
 export default Class;
