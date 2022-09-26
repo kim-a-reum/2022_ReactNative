@@ -10,9 +10,9 @@ import {
   DefaultTheme,
   NavigationContainer,
 } from "@react-navigation/native";
-import Tabs from "./Navigation/Tabs";
-import Stack from "./Navigation/Stacks";
 import Root from "./Navigation/Root";
+import { ThemeProvider } from "styled-components";
+import { darkTheme, lightTheme } from "./styled";
 
 // useAssets 와 useFonts를 사용하지 않은 방식 적용해보기
 // Assets말고 다른 로직이 로딩중에 필요할때는 이렇게 적용해야한다 !
@@ -57,6 +57,8 @@ export default function App() {
     }
   }, [appIsReady]);
 
+  // 유저가 다크모드인지 확인하자
+  const isDark = useColorScheme() === "dark";
   if (!appIsReady) {
     return (
       <View style={styles.container} onLayout={onLayoutRootView}>
@@ -67,12 +69,12 @@ export default function App() {
     );
   }
 
-  // 유저가 다크모드인지 확인하자
-
   return (
-    <NavigationContainer>
-      <Root />
-    </NavigationContainer>
+    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+      <NavigationContainer>
+        <Root />
+      </NavigationContainer>
+    </ThemeProvider>
   );
 }
 
