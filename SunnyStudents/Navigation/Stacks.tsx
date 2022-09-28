@@ -15,9 +15,9 @@ const Stack = () => {
         headerTintColor: YELLOW,
       }}
     >
-      <NativeStack.Screen name="One" component={Class} />
-      <NativeStack.Screen name="Two" component={Student} />
-      <NativeStack.Screen name="Three" component={Search} />
+      <NativeStack.Screen name="Class" component={Class} />
+      <NativeStack.Screen name="Student" component={Student} />
+      <NativeStack.Screen name="Search" component={Search} />
     </NativeStack.Navigator>
   );
 };
