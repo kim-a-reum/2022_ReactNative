@@ -12,7 +12,8 @@ import {
 } from "@react-navigation/native";
 import Root from "./Navigation/Root";
 import { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme } from "./styled";
+import { darkTheme } from "./styled";
+import { lightTheme } from "./styled";
 
 // useAssets 와 useFonts를 사용하지 않은 방식 적용해보기
 // Assets말고 다른 로직이 로딩중에 필요할때는 이렇게 적용해야한다 !
@@ -29,6 +30,8 @@ const loadImages = (images) =>
       return Asset.loadAsync(images);
     }
   });
+
+const theme = {};
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
