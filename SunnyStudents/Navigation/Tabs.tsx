@@ -15,6 +15,10 @@ const Tabs = () => {
   const isdarkmode = useColorScheme() === "dark";
   return (
     <Tab.Navigator
+      sceneContainerStyle={{
+        // 모든 화면을 담고있는 컨테이너의 스타일
+        backgroundColor: isdarkmode ? "white" : "lightgray",
+      }}
       screenOptions={{
         tabBarLabelStyle: {
           fontSize: 12.5,
