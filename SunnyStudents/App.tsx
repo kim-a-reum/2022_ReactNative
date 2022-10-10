@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
 //   return (
 //     <WebView
 //       style={{ width: 400, height: 300 }}
-//       source={{ uri: "https://www.reactnative.dev/" }}
+//       source={{ uri: "https://www.naver.com/" }}
 //     />
 //   );
 // }

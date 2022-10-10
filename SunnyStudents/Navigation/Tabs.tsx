@@ -37,7 +37,7 @@ const Tabs = () => {
       }}
     >
       <Tab.Screen
-        name="강의 목록"
+        name="강의"
         component={Class}
         options={{
           tabBarIcon: ({ focused, color, size }) => (

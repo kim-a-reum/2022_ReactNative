@@ -35,6 +35,8 @@ const Class: React.FC<NativeStackScreenProps<any, "Class">> = () => {
       arr.push(json);
     }
     setStudents(arr);
+
+    console.log(students);
     setLoading(false);
   };
 
@@ -62,6 +64,9 @@ const Class: React.FC<NativeStackScreenProps<any, "Class">> = () => {
           <Students style={{ backgroundColor: "green" }} />
         </Swiper>
       </ScrollView>
+      <View style={{ width: 100, height: 100, backgroundColor: "pink" }}>
+        <Text>안녕하세요</Text>
+      </View>
     </View>
   );
 };
