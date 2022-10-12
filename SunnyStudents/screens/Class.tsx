@@ -5,8 +5,6 @@ import { Text, View } from "react-native";
 import Swiper from "react-native-web-swiper";
 import styled from "styled-components/native";
 
-const API_KEY = "609d02fc0e4f67ea6646dc7de401b14e";
-
 const ScrollView = styled.ScrollView``;
 
 const Students = styled.View`
@@ -23,28 +21,11 @@ const { height: SCREEN_HEIGHT } = Dimensions.get("window");
 
 const Class: React.FC<NativeStackScreenProps<any, "Class">> = () => {
   const [loading, setLoading] = useState(true);
-  const [students, setStudents] = useState([]);
-  const studentData = async () => {
-    const arr = [];
-    for (let i = 0; i < 10; i++) {
-      const { biography, ...json } = await (
-        await fetch(
-          `https://api.themoviedb.org/3/person/${i}?api_key=${API_KEY}&language=en-US`
-        )
-      ).json();
-      arr.push(json);
-    }
-    setStudents(arr);
-
-    console.log(students);
-    setLoading(false);
-  };
-
   useEffect(() => {
-    studentData();
-    console.log(students);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   }, []);
-
   return loading ? (
     <Loader>
       <ActivityIndicator />
@@ -64,9 +45,6 @@ const Class: React.FC<NativeStackScreenProps<any, "Class">> = () => {
           <Students style={{ backgroundColor: "green" }} />
         </Swiper>
       </ScrollView>
-      <View style={{ width: 100, height: 100, backgroundColor: "pink" }}>
-        <Text>안녕하세요</Text>
-      </View>
     </View>
   );
 };
