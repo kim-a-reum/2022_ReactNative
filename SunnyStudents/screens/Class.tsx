@@ -45,6 +45,7 @@ const Class: React.FC<NativeStackScreenProps<any, "Class">> = () => {
           <Students style={{ backgroundColor: "green" }} />
         </Swiper>
       </ScrollView>
+      <Text>안녕하세요 </Text>
     </View>
   );
 };

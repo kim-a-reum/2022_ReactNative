@@ -94,14 +94,3 @@ const styles = StyleSheet.create({
     marginBottom: 100,
   },
 });
-
-// import WebView from "react-native-webview";
-
-// export default function App() {
-//   return (
-//     <WebView
-//       style={{ width: 400, height: 300 }}
-//       source={{ uri: "https://www.naver.com/" }}
-//     />
-//   );
-// }
