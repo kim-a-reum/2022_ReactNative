@@ -47,19 +47,17 @@ const Student = () => {
         )
       ).json();
       arr.push(json);
-      console.log(json);
     }
     setStudents(arr);
   };
 
   useEffect(() => {
     studentData();
-    console.log(students);
   }, []);
 
   return (
     <View>
-      <Scroll horizontal>
+      <Scroll horizontal loop timeout={5}>
         {students.map((el) => (
           <ScrollWrapper key={el.imdb_id}>
             <StudentImg source={{ uri: makeStudentImg(el.profile_path) }} />

@@ -40,7 +40,7 @@ export default function App() {
       try {
         const fonts = loadFonts([Entypo.font, Ionicons.font]);
         const images = loadImages([
-          require("./logo.png"),
+          require("./img/logo.png"),
           "https://images.velog.io/images/yeopto/post/77770604-da6a-4e32-a178-afe19b58ff51/%E1%84%83%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3.png",
         ]);
         await Promise.all([...fonts, ...images]);
@@ -65,7 +65,7 @@ export default function App() {
   if (!appIsReady) {
     return (
       <View style={styles.container} onLayout={onLayoutRootView}>
-        <Image source={require("./logo.png")} style={styles.logoBox} />
+        <Image source={require("./img/logo.png")} style={styles.logoBox} />
         <Text>loading...중</Text>
         <Text>환영합니다!</Text>
       </View>

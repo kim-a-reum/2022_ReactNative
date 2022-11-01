@@ -7,7 +7,7 @@ import styled from "styled-components/native";
 
 const ScrollView = styled.ScrollView``;
 
-const Students = styled.View`
+const CampClass = styled.Image`
   flex: 1;
 `;
 
@@ -35,17 +35,25 @@ const Class: React.FC<NativeStackScreenProps<any, "Class">> = () => {
       <ScrollView>
         <Swiper
           loop
-          // timeout={2}
+          timeout={2}
           controlsEnabled={false}
           containerStyle={{ width: "100%", height: SCREEN_HEIGHT / 4 }}
         >
-          <Students style={{ backgroundColor: "red" }} />
-          <Students style={{ backgroundColor: "yellow" }} />
-          <Students style={{ backgroundColor: "blue" }} />
-          <Students style={{ backgroundColor: "green" }} />
+          <CampClass
+            source={require("../img/class1.png")}
+            style={{ width: "100%" }}
+          />
+          <CampClass
+            source={require("../img/class2.png")}
+            style={{ width: "100%" }}
+          />
+          <CampClass
+            source={require("../img/class3.png")}
+            style={{ width: "100%" }}
+          />
         </Swiper>
       </ScrollView>
-      <Text>안녕하세요 </Text>
+      <Text>강의목록부분입니다</Text>
     </View>
   );
 };
