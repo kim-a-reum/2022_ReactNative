@@ -24,7 +24,7 @@ const Class: React.FC<NativeStackScreenProps<any, "Class">> = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
   }, []);
   return loading ? (
     <Loader>
@@ -36,7 +36,7 @@ const Class: React.FC<NativeStackScreenProps<any, "Class">> = () => {
         <Swiper
           loop
           timeout={2}
-          controlsEnabled={false}
+          controlsEnabled
           containerStyle={{ width: "100%", height: SCREEN_HEIGHT / 4 }}
         >
           <CampClass
